@@ -1,4 +1,3 @@
-export class ApiConfig {
-    static TOKEN = "your tmdb token";
-    static BASE_URL = "https://api.themoviedb.org/3";
+export const API =  {
+    TOKEN :"your tmdb token"
 }
