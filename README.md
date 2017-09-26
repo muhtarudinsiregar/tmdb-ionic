@@ -24,3 +24,9 @@ $ ionic cordova run ios
 
 Substitute ios for android if not on a Mac.
 
+## Setup API
+
+Open file `src/config/api.ts`, then add your tmdb token here.
+Done.
+
+
