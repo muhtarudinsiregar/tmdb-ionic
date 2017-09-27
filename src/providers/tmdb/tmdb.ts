@@ -14,4 +14,8 @@ export class TmdbProvider {
     return this.api.get('/movie/popular')
       .map(data => data.results);
   }
+
+  getUpcomingMovies() {
+    return this.api.get('/movie/upcoming').map(data => data.results);
+  }
 }
