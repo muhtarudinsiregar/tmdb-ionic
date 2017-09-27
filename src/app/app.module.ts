@@ -14,6 +14,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ApiProvider } from '../providers/api/api';
 import { TmdbProvider } from '../providers/tmdb/tmdb';
+import { UpcomingPage } from '../pages/upcoming/upcoming';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TmdbProvider } from '../providers/tmdb/tmdb';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    UpcomingPage
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,8 @@ import { TmdbProvider } from '../providers/tmdb/tmdb';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    UpcomingPage
   ],
   providers: [
     StatusBar,
