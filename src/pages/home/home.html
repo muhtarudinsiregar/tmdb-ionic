@@ -4,17 +4,19 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-list>
+<ion-content>
+  <ion-list no-margin>
     <ion-item *ngFor="let movie of movies">
       <ion-thumbnail item-start>
         <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
       </ion-thumbnail>
-      <h2>{{movie.title}}</h2>
-      <p>
+      <h2 class="movie-title">{{movie.title}}</h2>
+      <h3 class="release-date">{{movie.release_date}}</h3>
+      <h3 class="lang">({{ movie.original_language }})</h3>
+      <div>
         <ion-icon name="star" class="star"></ion-icon>
-        {{movie.vote_average}} || {{movie.release_date}}
-      </p>
+        <p class="rating">{{movie.vote_average}}</p>/10
+      </div>
       <button ion-button clear item-end>View</button>
     </ion-item>
   </ion-list>
