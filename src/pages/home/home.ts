@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { TmdbProvider } from '../../providers/tmdb/tmdb';
+import { HomeDetailPage } from '../home-detail/home-detail';
 
 @Component({
   selector: 'page-home',
@@ -20,6 +21,10 @@ export class HomePage {
     this.tmdbProvider.getPopularMovies().subscribe(data => {
       this.movies = data;
     });
+  }
+
+  movieDetail(movie: any) {
+    this.navCtrl.push(HomeDetailPage, { movie: movie });
   }
 
 }
