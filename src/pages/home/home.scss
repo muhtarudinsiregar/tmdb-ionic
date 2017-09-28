@@ -1,3 +1,21 @@
 page-home {
-
+    .lang, .rating, .release-date {
+        display: inline;
+    }
+    .star {
+        color: yellow;
+    }
+    .movie-title {
+        font-weight: bold;
+    }
+    .rating {
+        color: black;
+        font-weight: bold;
+    }
+    .release-date, .lang {
+        color: #cccccc;
+    }
+    .lang {
+        text-transform: uppercase;
+    }
 }

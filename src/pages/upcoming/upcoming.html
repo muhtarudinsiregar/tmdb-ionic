@@ -1,0 +1,16 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Upcoming</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-card *ngFor="let movie of movies" no-margin>
+    <img src="https://image.tmdb.org/t/p/w500/{{movie?.backdrop_path}}" />
+    <div class="card-title">{{movie?.title}}</div>
+    <div class="card-subtitle">28 Listings</div>
+  </ion-card>
+</ion-content>
