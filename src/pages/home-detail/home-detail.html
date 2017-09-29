@@ -4,6 +4,41 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h1>{{movie?.title}}</h1>
+<ion-content fullscreen elestic-header>
+
+  <section class="housing-image" [ngStyle]="{ 'background-image': 'url(https://image.tmdb.org/t/p/w500/' + movie.poster_path + ')'}">
+    <!-- <section class="housing-banner" padding>
+      <span class="housing-title">{{movie?.title}}</span>
+      <span class="price">{{movie?.vote_average}} / 10</span>
+    </section> -->
+  </section>
+
+  <section class="main-content">
+    <ion-grid class="main-features">
+      <ion-row>
+        <ion-col text-center col-12>
+          <span class="item-block title">{{movie?.title}}</span>
+          <span class="item-block">
+            <ion-icon name="star"></ion-icon>
+            {{movie.vote_average}} | {{movie.release_date}}
+          </span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid class="listing-details">
+      <ion-row>
+        <p margin-left margin-right no-margin-top style="text-align: justify">
+          {{movie.overview}}
+        </p>
+      </ion-row>
+    </ion-grid>
+  </section>
+
 </ion-content>
+
+<!-- <ion-footer>
+  <button ion-button large full no-margin color="danger">
+    get in touch now
+  </button>
+</ion-footer> -->
