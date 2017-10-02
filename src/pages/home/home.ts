@@ -1,17 +1,19 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { TmdbProvider } from '../../providers/tmdb/tmdb';
-import { HomeDetailPage } from '../home-detail/home-detail';
+import { Component } from "@angular/core";
+import { NavController } from "ionic-angular";
+import { TmdbProvider } from "../../providers/tmdb/tmdb";
+import { HomeDetailPage } from "../home-detail/home-detail";
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: "page-home",
+  templateUrl: "home.html"
 })
 export class HomePage {
   private movies: Array<object> = [];
 
-  constructor(public navCtrl: NavController, private tmdbProvider: TmdbProvider) {
-  }
+  constructor(
+    public navCtrl: NavController,
+    private tmdbProvider: TmdbProvider
+  ) {}
 
   ionViewDidLoad() {
     this.getPopularMovies();
@@ -26,5 +28,4 @@ export class HomePage {
   movieDetail(movie: any) {
     this.navCtrl.push(HomeDetailPage, { movie: movie });
   }
-
 }
