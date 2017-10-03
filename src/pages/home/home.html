@@ -8,7 +8,7 @@
   <ion-list no-margin>
     <ion-item *ngFor="let movie of movies" (click)="movieDetail(movie)">
       <ion-thumbnail item-start>
-        <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" class="movie-poster">
+        <img src="https://image.tmdb.org/t/p/w92/{{movie.poster_path}}" class="movie-poster">
       </ion-thumbnail>
       <h2 class="movie-title">{{movie.title}}</h2>
       <h3 class="release-date">{{movie.release_date}}</h3>
