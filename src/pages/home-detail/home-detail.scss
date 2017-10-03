@@ -2,7 +2,7 @@ page-home-detail {
   $black-overlay: rgba(0, 0, 0, 0.3);
   $text-color: #666;
   $banner-text-color: white;
-  $content-color: whitesmoke;
+  $content-color: #fff;
   $detail-background: rgba(236, 236, 236, 0.8);
 
   /* Header */
@@ -18,7 +18,7 @@ page-home-detail {
 
   /* Image */
   .housing-image {
-    background-size: contain;
+    background-size: cover;
     height: 40vh;
     position: relative;
     background-position: center center;
@@ -64,10 +64,20 @@ page-home-detail {
   }
 
   .main-features {
-    color: #3cc59a;
+    color: #000;
 
     ion-icon {
       font-size: 5.5rem !important;
+    }
+
+    .poster-img {
+      position: relative;
+      top: -90px;
+
+      background-size: cover !important;
+      background-position: left !important;
+      width: 154px !important;
+      height: 231px !important;
     }
   }
 
@@ -76,10 +86,23 @@ page-home-detail {
     display: inherit;
     ion-icon {
       font-size: 2rem !important;
+      color: #95a5a6;
+    }
+    .rating {
+      color: #f1c40f !important;
+    }
+    // tags for genre
+    .tag {
+      display: inline-block;
+      background-color: #fff;
+      color: #666;
+      margin: 5px 5px;
+      padding: 2px 5px;
+      text-transform: uppercase;
+      border: 2px solid #ecf0f1;
     }
   }
   .title {
     font-size: 24px;
-    text-transform: uppercase;
   }
 }

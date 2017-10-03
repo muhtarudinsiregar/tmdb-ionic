@@ -15,7 +15,7 @@ import { TmdbProvider } from "../../providers/tmdb/tmdb";
 })
 export class HomeDetailPage {
   movie: any = {};
-  similarMovies: Array<any> = [];
+  detail: any;
 
   constructor(
     public navCtrl: NavController,
@@ -27,12 +27,10 @@ export class HomeDetailPage {
 
   ionViewDidLoad() {
     const movieId = this.movie.id;
-    this.tmdbApi.getSimilarMovies(movieId).subscribe(res => {
-      this.similarMovies = res;
-    });
+    this.tmdbApi.getDetailMovie(movieId).subscribe(res => (this.detail = res));
   }
 
-  posterUrl(url: string) {
-    return `https://image.tmdb.org/t/p/w780/${url}`;
+  posterUrl(url: string, size: number = 780) {
+    return `https://image.tmdb.org/t/p/${size}/${url}`;
   }
 }

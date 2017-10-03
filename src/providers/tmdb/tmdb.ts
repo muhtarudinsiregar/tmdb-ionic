@@ -17,6 +17,9 @@ export class TmdbProvider {
     return this.api.get("/movie/upcoming").map(data => data.results);
   }
 
+  getDetailMovie(movieId: number) {
+    return this.api.get(`/movie/${movieId}`).map(data => data);
+  }
   getSimilarMovies(movieId: number) {
     return this.api.get(`/movie/${movieId}/similar`).map(data => data.results);
   }

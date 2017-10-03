@@ -5,18 +5,27 @@
 </ion-header>
 
 <ion-content fullscreen elestic-header>
-
-  <section class="housing-image" [ngStyle]="{ 'background-image': 'url(https://image.tmdb.org/t/p/w780/' + movie.poster_path + ')'}">
+  <section class="housing-image" [ngStyle]="{ 'background-image': 'url(https://image.tmdb.org/t/p/w780/' + detail?.poster_path + ')'}">
   </section>
 
   <section class="main-content">
-    <ion-grid class="main-features">
+    <ion-grid class="main-features" padding>
       <ion-row>
-        <ion-col text-center col-12>
-          <span class="item-block title">{{movie?.title}}</span>
-          <span class="item-block">
-            <ion-icon name="star"></ion-icon>
-            {{movie.vote_average}} | {{movie.release_date}}
+        <ion-img class="poster-img" src="https://image.tmdb.org/t/p/w154/{{movie?.poster_path}}"></ion-img>
+        <ion-col>
+          <span class="item-block title" text-left padding-left>{{movie?.title}}</span>
+          <span class="item-block" padding-left text-left>
+            <ion-icon name="star" class="rating"></ion-icon>
+            {{movie.vote_average}}
+            <span class="runtime" padding-left>
+                <ion-icon name="clock"></ion-icon>
+                {{detail?.runtime}} Minutes
+            </span>
+          </span>
+          <span class="item-block" padding-left text-left>
+            <span class="tag" *ngFor="let genre of detail?.genres">
+              {{ genre.name }}
+            </span>
           </span>
         </ion-col>
       </ion-row>
@@ -27,19 +36,6 @@
         <p margin-left margin-right no-margin-top style="text-align: justify">
           {{movie.overview}}
         </p>
-      </ion-row>
-    </ion-grid>
-
-    <ion-grid>
-      <ion-row>
-        <ion-slides pager>
-
-          <ion-slide [ngStyle]="{ 'background-image': 'url(https://image.tmdb.org/t/p/w185/' + movie.poster_path + ')'}" *ngFor="let movie of similarMovies">
-            <h2>{{movie.title}}</h2>
-          </ion-slide>
-
-
-        </ion-slides>
       </ion-row>
     </ion-grid>
   </section>
