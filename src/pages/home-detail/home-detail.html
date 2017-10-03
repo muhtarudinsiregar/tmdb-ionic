@@ -7,10 +7,6 @@
 <ion-content fullscreen elestic-header>
 
   <section class="housing-image" [ngStyle]="{ 'background-image': 'url(https://image.tmdb.org/t/p/w780/' + movie.poster_path + ')'}">
-    <!-- <section class="housing-banner" padding>
-      <span class="housing-title">{{movie?.title}}</span>
-      <span class="price">{{movie?.vote_average}} / 10</span>
-    </section> -->
   </section>
 
   <section class="main-content">
@@ -31,6 +27,19 @@
         <p margin-left margin-right no-margin-top style="text-align: justify">
           {{movie.overview}}
         </p>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-slides pager>
+
+          <ion-slide [ngStyle]="{ 'background-image': 'url(https://image.tmdb.org/t/p/w185/' + movie.poster_path + ')'}" *ngFor="let movie of similarMovies">
+            <h2>{{movie.title}}</h2>
+          </ion-slide>
+
+
+        </ion-slides>
       </ion-row>
     </ion-grid>
   </section>
