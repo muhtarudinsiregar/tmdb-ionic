@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Detail</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content fullscreen elestic-header>
+  <section class="housing-image" [ngStyle]="{ 'background-image': 'url(https://image.tmdb.org/t/p/w780/' + detail?.poster_path + ')'}">
+  </section>
+
+  <section class="main-content">
+    <ion-grid class="main-features" padding>
+      <ion-row>
+        <ion-img class="poster-img" src="https://image.tmdb.org/t/p/w154/{{movie?.poster_path}}"></ion-img>
+        <ion-col>
+          <span class="item-block title" text-left padding-left>{{movie?.title}}</span>
+          <span class="item-block" padding-left text-left>
+            <ion-icon name="star" class="rating"></ion-icon>
+            {{movie.vote_average}}
+            <span class="runtime" padding-left>
+                <ion-icon name="clock"></ion-icon>
+                {{detail?.runtime}} Minutes
+            </span>
+          </span>
+          <span class="item-block" padding-left text-left>
+            <span class="tag" *ngFor="let genre of detail?.genres">
+              {{ genre.name }}
+            </span>
+          </span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid padding>
+      <ion-row>
+        <p style="text-align: justify">
+          {{movie.overview}}
+        </p>
+      </ion-row>
+    </ion-grid>
+  </section>
+
+</ion-content>
+
+<!-- <ion-footer>
+  <button ion-button large full no-margin color="danger">
+    get in touch now
+  </button>
+</ion-footer> -->

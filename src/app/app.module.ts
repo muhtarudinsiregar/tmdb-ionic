@@ -15,6 +15,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { ApiProvider } from '../providers/api/api';
 import { TmdbProvider } from '../providers/tmdb/tmdb';
 import { UpcomingPage } from '../pages/upcoming/upcoming';
+import { HomeDetailPage } from '../pages/home-detail/home-detail';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { UpcomingPage } from '../pages/upcoming/upcoming';
     AboutPage,
     ContactPage,
     HomePage,
+    HomeDetailPage,
     TabsPage,
     UpcomingPage
   ],
@@ -36,6 +38,7 @@ import { UpcomingPage } from '../pages/upcoming/upcoming';
     AboutPage,
     ContactPage,
     HomePage,
+    HomeDetailPage,
     TabsPage,
     UpcomingPage
   ],
